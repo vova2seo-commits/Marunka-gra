@@ -109,10 +109,10 @@
     </div>
     <canvas id="gameCanvas"></canvas>
     <div id="controls">
-        <button id="up" onclick="movePlayer(0, -1)">↑</button>
-        <button id="left" onclick="movePlayer(-1, 0)">←</button>
-        <button id="right" onclick="movePlayer(1, 0)">→</button>
-        <button id="down" onclick="movePlayer(0, 1)">↓</button>
+        <button id="up" onclick="movePlayer(-1, 0)">↑</button>
+        <button id="left" onclick="movePlayer(0, -1)">←</button>
+        <button id="right" onclick="movePlayer(0, 1)">→</button>
+        <button id="down" onclick="movePlayer(1, 0)">↓</button>
     </div>
     <div id="winMessage">
         <h1>🎉 Вітаю! 🎉</h1>
@@ -253,10 +253,10 @@
         document.addEventListener('keydown', (e) => {
             e.preventDefault();
             switch (e.key) {
-                case 'ArrowUp': movePlayer(0, -1); break;
-                case 'ArrowDown': movePlayer(0, 1); break;
-                case 'ArrowLeft': movePlayer(-1, 0); break;
-                case 'ArrowRight': movePlayer(1, 0); break;
+                case 'ArrowUp': movePlayer(-1, 0); break;
+                case 'ArrowDown': movePlayer(1, 0); break;
+                case 'ArrowLeft': movePlayer(0, -1); break;
+                case 'ArrowRight': movePlayer(0, 1); break;
             }
         });
 
