@@ -202,14 +202,23 @@
             }
         }
 
-        function drawPlayer() {
-            ctx.save();
-            ctx.font = `${cellSize * 0.85}px Arial`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('🐻', player.col * cellSize + cellSize / 2, player.row * cellSize + cellSize / 2);
-            ctx.restore();
-        }
+       // Картинка гравця (підгружається один раз)
+const playerImage = new Image();
+playerImage.src = 'https://humansecuritynow.org/wp-content/uploads/2025/12/332.png';
+
+function drawPlayer() {
+    // якщо картинка ще не завантажилась — нічого не малюємо
+    if (!playerImage.complete) return;
+
+    ctx.drawImage(
+        playerImage,
+        player.col * cellSize,
+        player.row * cellSize,
+        cellSize,
+        cellSize
+    );
+}
+
 
         function drawGoal() {
             ctx.save();
